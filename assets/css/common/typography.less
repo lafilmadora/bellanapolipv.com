@@ -1,0 +1,134 @@
+/* -----
+General typography style
+----- */
+
+@fontsize-h1: 38;
+@fontsize-h2: 26;
+@fontsize-h3: 21;
+@fontsize-h4: 16;
+@fontsize-h5: 14;
+@fontsize-h6: 10;
+@fontsize-display: 48;
+@fontsize-p: 14;
+
+p, span, a, h1, h2, h3, h4, h5, strong{
+	.font-smoothing();
+}
+
+h1, h2, h3, h4, h5, h6, p, span{
+	line-height: 1.2;
+	margin: 0 0 .2em 0;
+}
+
+p{
+	line-height: 2;
+	text-align: left;
+	margin: 20px 0;
+}
+
+h1{
+	.font-size(@fontsize-h1);
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+
+h2{
+	.font-size(@fontsize-h2);
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+
+h3{
+	.font-size(@fontsize-h3);
+	letter-spacing: 2px;
+}
+
+h4{
+	.font-size(@fontsize-h4);
+}
+
+h5{
+	.font-size(@fontsize-h5);
+}
+
+h6{
+	.font-size(@fontsize-h6);
+}
+
+p, span{
+	.font-size(@fontsize-p);
+	line-height: 1.6;
+}
+
+a{
+	text-decoration: none;
+	color: @color-link;
+
+	@media @mq-desktop{
+
+		.transition(color @transition-speed);
+
+		&:hover{
+			color: @color-link-hover;
+		}
+	}
+}
+
+.serif{
+	letter-spacing: 1px;
+	font-family: @font-serif;
+	color: @color-secondary;
+}
+
+.signature{
+
+	padding: 30px 0;
+	text-align: left;
+
+	h6{
+		text-transform: uppercase;
+		color: @color-secondary;
+		letter-spacing: 2px;
+		margin: 0;
+	}
+
+	h5{
+		.font-size(@fontsize-display);
+		font-family: @font-display;
+	}
+
+	&.center{
+		text-align: center;
+	}
+}
+
+blockquote{
+
+	border-left: 2px solid @color-secondary;
+	margin: 40px 0 40px 30px;
+	padding-left: 10px;
+
+	p{
+		.font-size(28);
+		color: @color-secondary;
+		font-family: @font-serif;
+		letter-spacing: 1px;
+		opacity: 1;
+		margin: 0;
+	}
+}
+
+.badge{
+	.font-size(14);
+
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 8px 8px 6px 8px;
+	border-radius: 5px;
+	background-color: @color-secondary-transparant;
+	color: @color-badge-text;
+    margin: 10px 0;
+}

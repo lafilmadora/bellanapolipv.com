@@ -1,0 +1,88 @@
+/*
+Content wrapper
+*/
+
+.content-wrap {
+	background-color: @color-background-overlay-dark;
+	min-height: 55vh;
+}
+
+.content{
+
+	/* Mobile padding of content area */
+	@padding: 30px;
+	padding: 0 @padding @padding;
+
+	@media @mq-phone-landscape {
+		padding: 0 50px 50px 50px;
+		min-height: 30vh;
+	}
+	
+	@media @mq-tablet {
+		padding: 0 75px 50px 75px;
+	}
+
+	@media @mq-tablet-landscape, @mq-desktop {
+		max-width: 650px;
+		margin: auto;
+	}
+
+	header{
+		.bb();
+
+		height: auto;
+
+		@media @mq-tablet-landscape, @mq-desktop{
+			margin: 10px 0 35px;
+		}
+
+		&.with-subnav{
+			margin: 0 0 35px 0;
+
+			ul{
+				list-style: none;
+				margin: 5px 0;
+				padding: 0;
+
+				overflow-x: scroll;
+				white-space: nowrap;
+
+				li{
+					display: inline-block;
+					margin-right: 10px;
+				}
+			}
+
+			@media @mq-tablet-landscape, @mq-tablet {
+
+				ul{
+					text-align: center;
+				}
+			}
+
+			@media @mq-desktop {
+
+				ul{
+					text-align: center;
+					overflow: hidden;
+				}
+			}
+
+
+		}
+	}
+
+	section{
+
+		margin-top: -15px;
+		padding-bottom: 30px;
+
+		@media @mq-tablet-landscape{
+			margin-bottom: 60px;
+		}
+
+		&:last-child{
+			padding-bottom: 0;
+		}
+	}
+}

@@ -1,0 +1,122 @@
+figure{
+
+    @radius: 3px;
+
+    margin: 35px 0 20px;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+
+    img{
+        width: 100%;
+        border-radius: @radius;
+    }
+
+    a{
+        position: relative;
+    }
+
+    figcaption{
+        .bb();
+        .border-bottom-radius(@radius);
+
+        width: 100%;
+        background-color: @color-image-caption-background;
+        padding: 20px 30px;
+        text-align: left;
+        color: @color-primary;
+        overflow: hidden;
+
+        h3{
+            letter-spacing: 1px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 0;
+            color: @color-image-cpation-text;
+        }
+
+        p{
+            margin: 0;
+            color: @color-secondary;
+        }
+
+        i{
+            display: none;
+        }
+    }
+
+    @media @mq-desktop{
+
+        figcaption{
+
+            .transform(translateY(100%));
+            .transition(transform .5s @animation-bezier);
+            position: absolute;
+            bottom: @radius - 1px;
+
+            i{
+                .transform(translateY(-50%));
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+            }
+        }
+
+        &:hover{
+
+            figcaption{
+                .transform(translateY(0));
+            }
+        }
+
+    }
+
+    /*figcaption{
+        display: none;
+        .bb();
+        .transition(transform .5s @animation-bezier);
+        position: relative;
+
+        width: 100%;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, .8);
+
+        h3{
+            text-transform: uppercase;
+            text-align: left;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        p{
+            font-family: @font-serif;
+            color: @color-text-alt;
+        }
+
+        .icon{
+            .transform(translateY(-50%));
+            position: absolute;
+            right: 20px;
+            top:50%;
+
+            &:before{
+                .font-size(21);
+            }
+        }
+    }
+
+    @media @mq-desktop {
+
+        figcaption{
+            .transform(translateY(100%));
+        }
+
+        &:hover{
+            figcaption{
+                .transform(translateY(0));
+            }
+        }
+    }
+    */
+}

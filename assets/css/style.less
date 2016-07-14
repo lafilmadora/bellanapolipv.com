@@ -1,0 +1,77 @@
+//
+// Import colorscheme
+// --------------------------------------------------
+@import 'theme/colorscheme/default';
+
+//
+// A: Setup less
+// --------------------------------------------------
+@import 'common/mixins';
+@import 'common/normalize';
+@import 'common/normalize-opentype';
+@import 'common/variables';
+@import 'common/typography';
+@import 'theme/transitions';
+@import 'libs/font-sans';
+@import 'libs/font-serif';
+@import 'libs/font-display';
+@import 'libs/font-icons';
+@import 'libs/font-icons-social';
+@import 'libs/photoswipe/photoswipe';
+@import 'libs/remodal/remodal';
+
+/* Configure text selection color */
+::selection {
+	background: @color-selection;
+	color: @color-primary;
+	text-shadow: none;
+}
+
+::-moz-selection {
+	background: @color-selection;
+	color: @color-primary;
+	text-shadow: none;
+}
+
+html{
+	.transition(all .3s linear);
+	background-color: @color-background-body;
+	font: normal 62.5%/1em @font-sans;
+	height: 100%;
+	color: @color-primary;
+	overflow: hidden;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+
+	main{
+		z-index: @z-index-main;
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		overflow: visible;
+		overflow-y: scroll;
+
+		@media @mq-phone, @mq-phone-landscape, @mq-tablet{
+			-webkit-overflow-scrolling: touch;
+		}
+	}
+}
+
+@import 'elements/form';
+@import 'elements/figure';
+@import 'elements/nav';
+@import 'elements/header';
+@import 'elements/footer';
+@import 'elements/content';
+@import 'elements/list';
+@import 'elements/slideshow';
+@import 'elements/overlay';
+@import 'elements/splash.less';
+@import 'elements/misc';
